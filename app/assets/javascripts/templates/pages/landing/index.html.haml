@@ -1,1 +1,37 @@
-%h1 Hey
+.landing
+  %section.intro#first-screen-section
+    .content
+      .row#name
+        .small-12.medium-10.large-8.xlarge-3.columns.right.text-right#name
+          %h1
+            Javi
+            %br Ramírez
+
+      .row
+        .small-12.medium-6.large-6.columns.right.text-right
+          %p I’m a 22 yo entrepreneur, designer and computer scientist who loves creating cool stuff.
+
+      .row#social
+        .small-12.medium-6.large-3.columns.right.text-right
+          .row
+            .small-4.columns
+              %a{href: "https://es.linkedin.com/in/javirmrz/en"}
+                =image_tag("linkedin-button.png")
+            .small-4.columns
+              %a{href: "http://twitter.com/javi_rmrz"}
+                =image_tag("twitter-button.png")
+            .small-4.columns
+              %a{href: "mailto:javi.rmrz@gmail.com"}
+                =image_tag("email-button.png")
+
+  %footer.site-footer
+    .row
+      .small-12.columns.right.text-right
+        %span
+          Designed & crafted with
+          %i.fa.fa-heart
+          from Madrid.
+          %a{href: "https://github.com/javi-rmrz/personal-website"}
+            Fork me on
+            %i.fa.fa-github
+            Github.

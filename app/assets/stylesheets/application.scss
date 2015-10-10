@@ -17,5 +17,37 @@
 
  */
 
- @import url(http://fonts.googleapis.com/css?family=Tangerine);
- @import url(http://fonts.googleapis.com/css?family=Amatic+SC);
+ @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+
+
+.application_index .spinner {
+ 	section {
+ 		width: 100%;
+ 		padding: 0;
+ 		display: table;
+ 		margin: 0;
+ 		max-width: none;
+ 		height: 100vh;
+
+    h1{
+      font-family: 'Lato';
+      font-size: 1.7rem;
+      font-weight: 300;
+      color: #356589;
+    }
+ 	}
+
+ 	.fullheight {
+ 		height: 100vh;
+ 	}
+
+ 	.content {
+ 		display: table-cell;
+ 		vertical-align: middle;
+ 	}
+
+  i{
+    color: #356589;
+  }
+}
