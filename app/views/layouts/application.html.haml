@@ -1,0 +1,34 @@
+%html{"ng-app" => "app"}
+  %head
+    %base{href: "/"}
+    %meta{charset:"utf-8"}
+    %meta{name:"viewport", content:"width=device-width, initial-scale=1.0"}
+
+    %title= content_for?(:title) ? yield(:title) : "Javi Ramírez"
+
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "vendor/modernizr"
+    = javascript_include_tag "https://www.google.com/jsapi"
+    = csrf_meta_tags
+    -# = stylesheet_link_tag "animation.css" // Be careful, warrior! This is not the same as daneden/animate.css and causes issues when using both at the same time
+
+
+  %body
+    - if notice
+      .alert-box.success.radius{"data-alert" => ""}
+        \ #{notice}
+        %a.close{:href => "#"} ×
+      - if alert
+        %h3.alert-box.alert-danger= alert
+    - if flash[:alert]
+      .alert-box.danger.radius{"data-alert" => ""}
+        \ #{alert}
+        %a.close{:href => "#"} ×
+
+    .content{class: "#{controller_name}_#{action_name}", "ng-view" => ""}
+
+      = yield
+
+      = render 'cookies_eu/consent_banner'
+
+      = javascript_include_tag "application"
