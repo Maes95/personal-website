@@ -123,4 +123,59 @@
   }
 
 
+  #second-screen-section{
+		background-image: url("javi-bg-blue.jpg");
+		background-position: left bottom;
+		background-size: cover;
+	}
+    .gridListdemoBasicUsage md-grid-list {
+  margin: 8px; }
+.gridListdemoBasicUsage .gray {
+  background: #f5f5f5; }
+.gridListdemoBasicUsage .green {
+  background: #b9f6ca; }
+.gridListdemoBasicUsage .yellow {
+  background: #ffff8d; }
+.gridListdemoBasicUsage .blue {
+  background: #84ffff; }
+.gridListdemoBasicUsage .purple {
+  background: #b388ff; }
+.gridListdemoBasicUsage .red {
+  background: #ff8a80; }
+.gridListdemoBasicUsage md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
+
+
+  md-card {
+    min-width: 55vw;
+    max-width: 80vw;
+    min-height: 60vh;
+    max-height: 70vh;
+  }
+
+  #horizontal-container {
+      height: 80vh;
+      width: 100vw;
+  }
+
+  .repeated-item {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 75vh;
+    @media screen and (min-width: 420px){
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+    width: 62vw;
+  }
+
+  md-content {
+    background: transparent;
+    //margin: 16px;
+  }
+
+  md-virtual-repeat-container {
+    // border: solid 1px grey;
+  }
+
 }

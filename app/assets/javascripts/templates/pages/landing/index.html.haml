@@ -36,9 +36,53 @@
             %i.fa.fa-github
             Github.
 
+  %section.intro#second-screen-section
+    .content
+      .row
+        .small-12.columns
+          %span.show-for-medium-up
+            press&nbsp;
+            %kbd
+              ←
+            &nbsp;and&nbsp;
+            %kbd
+              →
+            &nbsp;to navigate with your keyboard
+      %md-content{:layout => "column"}
+        %md-virtual-repeat-container#horizontal-container{"md-orient-horizontal" => ""}
+          .repeated-item{:flex => "", "md-virtual-repeat" => "item in items"}
+            %md-content.md-padding
+              %md-card
+                %img.md-card-image{:alt => "Photo", "ng-src" => "http://blog.talentank.es/wp-content/uploads/2015/04/weeks8-11-351x185.png"}/
+                %md-card-content
+                  %h2.md-title Talentank
+                  %p
+                    Stuff, y'know.
+                .md-actions{:layout => "row", "layout-align" => "end center"}
+                  %md-button Action 1
+                  %md-button Action 2
+            -# {{item}}
+
   %section.intro
-    %span cosas
-    %paper-card{:heading => "Card Title"}
-    .card-content Some content
-    .card-actions
-      %paper-button Some action
+    .content
+      %span otros trabajos
+      %div{"ng-cloak" => ""}
+        %md-grid-list.gridListdemoBasicUsage{"md-cols-gt-md" => "6", "md-cols-md" => "2", "md-cols-sm" => "1", "md-gutter" => "12px", "md-gutter-gt-sm" => "8px", "md-row-height" => "2:2", "md-row-height-gt-md" => "1:1"}
+          %md-grid-tile.gray{"md-colspan" => "2", "md-colspan-sm" => "1", "md-rowspan" => "3"}
+            %md-grid-tile-footer
+              %h3 #1: (3r x 2c)
+          %md-grid-tile.green
+            %md-grid-tile-footer
+              %h3 #2: (1r x 1c)
+          %md-grid-tile.yellow
+            %md-grid-tile-footer
+              %h3 #3: (1r x 1c)
+          %md-grid-tile.blue{"md-rowspan" => "2"}
+            %md-grid-tile-footer
+              %h3 #4: (2r x 1c)
+          %md-grid-tile.red{"md-colspan" => "2", "md-colspan-sm" => "1", "md-rowspan" => "2"}
+            %md-grid-tile-footer
+              %h3 #5: (2r x 2c)
+          %md-grid-tile.green{"md-rowspan" => "2"}
+            %md-grid-tile-footer
+              %h3 #6: (2r x 1c)
