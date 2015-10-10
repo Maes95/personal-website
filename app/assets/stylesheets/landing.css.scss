@@ -11,17 +11,6 @@
 		margin: 0;
 		max-width: none;
 		height: 100vh;
-
-		&:nth-of-type(2n) {
-			background-color: #ededed;
-			h1{
-				color: #fafafa;
-				margin-bottom: 1em;
-			}
-			p{
-				color: #444957;
-			}
-		}
 	}
 
 	.intro {
@@ -94,7 +83,7 @@
 		background-position: left bottom;
 		background-size: cover;
     min-height: 100%;
-    margin-bottom: -2rem;
+    margin-bottom: -3.2rem;
 	}
 
   #first-screen-section:after {
@@ -103,7 +92,7 @@
   }
 
   .site-footer, .page-wrap:after {
-    height: 2rem;
+    height: 3rem;
     font-size: 12px;
     a{
       color: white;
@@ -122,35 +111,61 @@
     padding-top: 1vh;
   }
 
+  section{
+    &:nth-of-type(2n) {
+      background-color: #ededed;
+      h1{
+        color: #fafafa;
+      }
+      p{
+        font-family: 'Open Sans';
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: #f5f5f5;
+      }
+      md-content {
+        background: transparent;
+        //margin: 16px;
+        h2 {
+          font-family: 'Lato';
+          @media screen and (min-width: 420px){
+            font-size: 2rem;
+          }
+          font-size: 1rem;
+          font-weight: 700;
+          line-height: 1em;
+          color: black;
+      		display: block;
+      	}
+      	p {
+          font-family: 'Open Sans';
+          font-size: 1.2rem;
+          font-weight: 300;
+      		color: black;
+      	}
+      }
+    }
+  }
+
 
   #second-screen-section{
-		background-image: url("javi-bg-blue.jpg");
+		background-image: url("blue-bg.jpg");
 		background-position: left bottom;
 		background-size: cover;
 	}
-    .gridListdemoBasicUsage md-grid-list {
-  margin: 8px; }
-.gridListdemoBasicUsage .gray {
-  background: #f5f5f5; }
-.gridListdemoBasicUsage .green {
-  background: #b9f6ca; }
-.gridListdemoBasicUsage .yellow {
-  background: #ffff8d; }
-.gridListdemoBasicUsage .blue {
-  background: #84ffff; }
-.gridListdemoBasicUsage .purple {
-  background: #b388ff; }
-.gridListdemoBasicUsage .red {
-  background: #ff8a80; }
-.gridListdemoBasicUsage md-grid-tile {
-  transition: all 400ms ease-out 50ms; }
-
 
   md-card {
     min-width: 55vw;
     max-width: 80vw;
     min-height: 60vh;
     max-height: 70vh;
+  }
+
+  .md-card-image{
+    height: 40vh;
+    background-image: url("orange-bg.jpg");
+		background-position: left bottom;
+		background-size: cover;
   }
 
   #horizontal-container {
@@ -169,13 +184,26 @@
     width: 62vw;
   }
 
-  md-content {
-    background: transparent;
-    //margin: 16px;
+  #third-screen-section{
+    background-image: url("blue-bg.jpg");
+    background-position: left bottom;
+    background-size: cover;
   }
-
-  md-virtual-repeat-container {
-    // border: solid 1px grey;
-  }
+  .gridListdemoBasicUsage md-grid-list {
+    margin: 8px; }
+  .gridListdemoBasicUsage .gray {
+    background: #f5f5f5; }
+  .gridListdemoBasicUsage .green {
+    background: #b9f6ca; }
+  .gridListdemoBasicUsage .yellow {
+    background: #ffff8d; }
+  .gridListdemoBasicUsage .blue {
+    background: #84ffff; }
+  .gridListdemoBasicUsage .purple {
+    background: #b388ff; }
+  .gridListdemoBasicUsage .red {
+    background: #ff8a80; }
+  .gridListdemoBasicUsage md-grid-tile {
+    transition: all 400ms ease-out 50ms; }
 
 }
