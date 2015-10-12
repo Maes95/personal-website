@@ -54,16 +54,24 @@
             &nbsp;to navigate with your keyboard
       %md-content{:layout => "column"}
         %md-virtual-repeat-container#horizontal-container{"md-orient-horizontal" => ""}
-          .repeated-item{:flex => "", "md-virtual-repeat" => "item in items"}
+          .repeated-item{:flex => "", "md-virtual-repeat" => "project in projects"}
             %md-content.md-padding
               %md-card
-                .md-card-image
+                .md-card-image{"ng-style" => "{'background-image': 'url(' + project.image + ')'}"}
                 %md-card-content
-                  %h2.md-title Project title
-                  %p
-                    Description
+                  %h2.md-title
+                    %a{"ng-href" => "{{project.url}}"}
+                      {{project.title}}
+                    %span.md-position {{project.position}}
+                  %p {{project.description}}
                 .md-actions{:layout => "row", "layout-align" => "end center"}
-                  %md-button{href: "http://google.com"} www
+                  %md-button{"ng-href" => "{{project.url}}", "ng-show" => "project.url"} www
+                  %md-button{"ng-href" => "{{project.twitter_url}}", "ng-show" => "project.twitter_url"}
+                    %i.fa.fa-twitter
+                    tw
+                  %md-button{"ng-href" => "{{project.facebook_url}}", "ng-show" => "project.facebook_url"}
+                    %i.fa.fa-facebook
+                    fb
             -# {{item}}
 
   %section.intro#third-screen-section
@@ -75,19 +83,19 @@
         %md-grid-list.gridListdemoBasicUsage{"md-cols-gt-md" => "6", "md-cols-md" => "2", "md-cols-sm" => "1", "md-gutter" => "12px", "md-gutter-gt-sm" => "8px", "md-row-height" => "2:2", "md-row-height-gt-md" => "1:1"}
           %md-grid-tile.gray{"md-colspan" => "2", "md-colspan-sm" => "1", "md-rowspan" => "3"}
             %md-grid-tile-footer
-              %h3 #1: (3r x 2c)
+              %h3 Personal blog
           %md-grid-tile.green
             %md-grid-tile-footer
-              %h3 #2: (1r x 1c)
+              %h3 Video
           %md-grid-tile.yellow
             %md-grid-tile-footer
-              %h3 #3: (1r x 1c)
+              %h3 website
           %md-grid-tile.blue{"md-rowspan" => "2"}
             %md-grid-tile-footer
-              %h3 #4: (2r x 1c)
+              %h3 Short story
           %md-grid-tile.red{"md-colspan" => "2", "md-colspan-sm" => "1", "md-rowspan" => "2"}
             %md-grid-tile-footer
-              %h3 #5: (2r x 2c)
-          %md-grid-tile.green{"md-rowspan" => "2"}
+              %h3 Android app
+          %md-grid-tile.purple{"md-rowspan" => "2"}
             %md-grid-tile-footer
-              %h3 #6: (2r x 1c)
+              %h3 Photography

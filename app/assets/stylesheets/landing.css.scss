@@ -161,6 +161,20 @@
     max-height: 70vh;
   }
 
+  .md-title, .md-title a{
+    color: black;
+  }
+
+  .md-position{
+    font-size: 1rem;
+    color: grey;
+  }
+
+  md-card-content, md-card-content p, md-card-content h1{
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
   .md-card-image{
     height: 40vh;
     background-image: url("orange-bg.jpg");
@@ -185,22 +199,42 @@
   }
 
   #third-screen-section{
-    background-image: url("blue-bg.jpg");
+    background-image: url("javi-bg-blue.jpg");
     background-position: left bottom;
     background-size: cover;
+  }
+
+  md-grid-tile-footer{
+    h3 {
+      font-family: 'Lato';
+      @media screen and (min-width: 420px){
+        font-size: 1rem;
+      }
+      font-size: 0.5rem;
+      font-weight: 700;
+      color: black;
+    }
   }
   .gridListdemoBasicUsage md-grid-list {
     margin: 8px; }
   .gridListdemoBasicUsage .gray {
-    background: #f5f5f5; }
+    background-image: url("orange-bg.jpg");
+    background-position: center center;
+    background-size: cover;}
   .gridListdemoBasicUsage .green {
-    background: #b9f6ca; }
+    background-image: url("somewhere.png");
+    background-position: center center;
+    background-size: cover; }
   .gridListdemoBasicUsage .yellow {
     background: #ffff8d; }
   .gridListdemoBasicUsage .blue {
-    background: #84ffff; }
+    background-image: url("literature.jpg");
+    background-position: center center;
+    background-size: cover; }
   .gridListdemoBasicUsage .purple {
-    background: #b388ff; }
+    background-image: url('http://c2.staticflickr.com/4/3725/9547332882_bf7ba3faae_c.jpg');
+    background-position: center center;
+    background-size: cover;}
   .gridListdemoBasicUsage .red {
     background: #ff8a80; }
   .gridListdemoBasicUsage md-grid-tile {
