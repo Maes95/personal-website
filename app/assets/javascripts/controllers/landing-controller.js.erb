@@ -1,12 +1,12 @@
 angular.module('app')
 
-.config( function($mdThemingProvider){
+.config(['$mdThemingProvider', function($mdThemingProvider){
     $mdThemingProvider.theme('docs-white', 'default')
         .primaryPalette('light-blue');
-  })
+  }])
 
 
-.controller('LandingController', ['$scope', '$location', '$resource', '$mdToast', 'anchorSmoothScroll', 'ContactForm' ,function($scope, $location, $resource, $mdToast, anchorSmoothScroll, ContactForm){
+.controller('LandingController', ['$scope', '$location', '$resource', '$mdToast', 'anchorSmoothScroll', 'ContactForm', function($scope, $location, $resource, $mdToast, anchorSmoothScroll, ContactForm){
 
   $scope.gotoElement = function (eID){
       // set the location.hash to the id of
