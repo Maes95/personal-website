@@ -6,7 +6,7 @@ angular.module('app')
   })
 
 
-.controller('LandingController', ['$scope', '$location', '$mdToast', 'anchorSmoothScroll' ,function($scope, $location, $mdToast, anchorSmoothScroll){
+.controller('LandingController', ['$scope', '$location', '$mdToast', 'anchorSmoothScroll', 'ContactForm' ,function($scope, $location, $mdToast, anchorSmoothScroll, ContactForm){
 
   $scope.gotoElement = function (eID){
       // set the location.hash to the id of
@@ -72,6 +72,16 @@ angular.module('app')
       .content('Full portfolio coming soon')
       .position($scope.getToastPosition())
       .hideDelay(3000)
-  );
-};
+    );
+  };
+
+  $scope.isContactFormSent = false;
+
+  $scope.sendContactForm = function(){
+    contact = new ContactForm($scope.contactForm);
+    contact.$save();
+    $scope.sentContactForm = true;
+    console.log($scope.sentContactForm);
+  };
+
 }]);
