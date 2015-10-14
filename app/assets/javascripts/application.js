@@ -15,6 +15,9 @@
 //= require angular-resource
 //= require angular-sanitize
 //= require angular-rails-templates
+//= require angular-aria
+//= require angular-animate
+//= require angular-material
 
 // --Our angular app--
 //= require app

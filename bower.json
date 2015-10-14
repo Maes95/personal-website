@@ -19,6 +19,7 @@
     "angular-resource": "latest",
     "angular-sanitize": "latest",
     "angular-mocks": "latest",
-    "angular-translate": "latest"
+    "angular-translate": "latest",
+    "angular-material": "~0.11.2"
   }
 }

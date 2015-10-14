@@ -1,0 +1,109 @@
+angular.module('app')
+
+.config( function($mdThemingProvider){
+    $mdThemingProvider.theme('docs-white', 'default')
+        .primaryPalette('light-blue');
+  })
+
+
+.controller('LandingController', ['$scope', '$location', '$resource', '$mdToast', 'anchorSmoothScroll', 'ContactForm' ,function($scope, $location, $resource, $mdToast, anchorSmoothScroll, ContactForm){
+
+  $scope.gotoElement = function (eID){
+      // set the location.hash to the id of
+      // the element you wish to scroll to.
+      $location.hash(eID);
+
+      // call $anchorScroll()
+      anchorSmoothScroll.scrollTo(eID);
+
+    };
+
+  function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    if (m < 0 || (m === 0 && today.getDate() === birthDate.getDate())) {
+        $scope.isTodayMyBirthday = true;
+    }
+    return age;
+  };
+
+  var birthDate = "1993/05/29";
+  $scope.currentAge = getAge(birthDate);
+
+  $scope.projects = [
+    {
+      title: "talentank.co",
+      coverImage: "<%= asset_path('talentank-cover.jpg') %>",
+      onHoverImage: "<%= asset_path('talentank-showcase-compressed.gif') %>",
+      position: "Lead developer & designer",
+      description: "Have you ever been in love? Did you know you can feel the same way about your job? It's all about culture fit!",
+      url: "http://talentank.co",
+      twitter_url: "http://twitter.com/talentank_es",
+      facebook_url: "http://facebook.com/talentank",
+    },
+    {
+      title: "unioncampus.com",
+      coverImage: "<%= asset_path('union-cover.jpg') %>",
+      onHoverImage: "<%= asset_path('union-showcase-compressed.gif') %>",
+      position: "Founder, president",
+      description: "Non-profit, non-political organisation for promoting entrepreneurship and knowledge sharing among university students.",
+      url: "http://unioncampus.com",
+      twitter_url: "http://twitter.com/unioncampus",
+      facebook_url: "http://facebook.com/unioncampusES"
+    }
+    // ,
+    // {
+    //   title: "TBA",
+    //   coverImage: "<%= asset_path('-cover.jpg') %>",
+    //   onHoverImage: "<%= asset_path('talentank-card.gif') %>",
+    //   position: "Founder, CEO",
+    //   description: "You know you want to share your sadness when you feel down from time to time. It's all right. We just wanna laugh about it. Just a bit.",
+    //   url: "TBA"
+    // }
+  ];
+
+  $scope.minor_projects = [
+  ];
+
+  $scope.toastPosition = {
+    bottom: true,
+    top: false,
+    left: true,
+    right: false
+  };
+
+  $scope.getToastPosition = function() {
+    return Object.keys($scope.toastPosition)
+      .filter(function(pos) { return $scope.toastPosition[pos]; })
+      .join(' ');
+  };
+
+  $scope.showSimpleToast = function() {
+  $mdToast.show(
+    $mdToast.simple()
+      .content('Full portfolio coming soon')
+      .position($scope.getToastPosition())
+      .hideDelay(3000)
+    );
+  };
+
+  $scope.couldNotSaveContactForm = false;
+  $scope.isContactFormSent = false;
+
+  $scope.sendContactForm = function(contactForm){
+    contact = new ContactForm(contactForm);
+    contact.$save(function(u, putResponseHeaders) {
+      $scope.isContactFormSent = true;
+    })
+    .catch(function(req) {
+      $scope.couldNotSaveContactForm = true;
+      console.log("error sending message");
+    });
+  };
+
+}]);

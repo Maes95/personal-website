@@ -11,17 +11,6 @@
 		margin: 0;
 		max-width: none;
 		height: 100vh;
-
-		&:nth-of-type(2n) {
-			background-color: #ededed;
-			h1{
-				color: #fafafa;
-				margin-bottom: 1em;
-			}
-			p{
-				color: #444957;
-			}
-		}
 	}
 
 	.intro {
@@ -42,7 +31,7 @@
     @media screen and (min-width: 420px){
       font-size: 6rem;
     }
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 700;
     line-height: 1em;
     color: #fafafa;
@@ -94,7 +83,7 @@
 		background-position: left bottom;
 		background-size: cover;
     min-height: 100%;
-    margin-bottom: -3rem;
+    margin-bottom: -4rem;
 	}
 
   #first-screen-section:after {
@@ -103,7 +92,7 @@
   }
 
   .site-footer, .page-wrap:after {
-    height: 2rem;
+    height: 3rem;
     font-size: 12px;
     a{
       color: white;
@@ -122,5 +111,181 @@
     padding-top: 1vh;
   }
 
+  section{
+    &:nth-of-type(2n) {
+      background-color: #ededed;
+      h1{
+        color: #fafafa;
+      }
+      p{
+        font-family: 'Open Sans';
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: #f5f5f5;
+      }
+      md-content {
+        background: transparent;
+        //margin: 16px;
+        h2 {
+          font-family: 'Lato';
+          @media screen and (min-width: 420px){
+            font-size: 2rem;
+          }
+          font-size: 1rem;
+          font-weight: 700;
+          line-height: 1em;
+          color: black;
+      		display: block;
+      	}
+      	p {
+          font-family: 'Open Sans';
+          @media screen and (min-width: 420px){
+            font-size: 1.2rem;
+          }
+          font-size: 0.7rem;
+          font-weight: 300;
+      		color: black;
+      	}
+      }
+    }
+  }
 
-}
+
+  #portfolio-section{
+		background-image: url("blue-bg.jpg");
+		background-position: left bottom;
+		background-size: cover;
+	}
+
+  md-card {
+    min-width: 55vw;
+    max-width: 80vw;
+    min-height: 60vh;
+    max-height: 70vh;
+  }
+
+  .md-title, .md-title a{
+    color: black;
+  }
+
+  .md-position{
+    font-size: 1rem;
+    color: grey;
+  }
+
+  md-card-content, md-card-content p, md-card-content h1{
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .md-card-image{
+    height: 40vh;
+		background-position: center center;
+		background-size: cover;
+  }
+
+  #horizontal-container {
+      height: 80vh;
+      width: 100%;
+  }
+
+  .repeated-item {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 75vh;
+    @media screen and (min-width: 420px){
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+    width: 62vw;
+  }
+
+  #third-screen-section{
+    background-image: url("greenish-yellow-bg.jpg");
+    background-position: left bottom;
+    background-size: cover;
+  }
+
+  md-grid-tile-footer{
+    h3 {
+      font-family: 'Lato';
+      @media screen and (min-width: 420px){
+        font-size: 1rem;
+      }
+      font-size: 1rem;
+      font-weight: 700;
+      color: black;
+    }
+  }
+  md-grid-list .gridListOtherWork {
+    // margin: 8px;
+    max-height: 80vh;
+  }
+  .gridListOtherWork .gray {
+    background-image: url("boston-adventure-desaturated.jpg");
+    &:hover{
+      background-image: url("boston-adventure.jpg");
+    }
+    background-position: center center;
+    background-size: cover;}
+  .gridListOtherWork .green {
+    background-image: url("somewhere-desaturated.jpg");
+    &:hover{
+      background-image: url("somewhere.jpg");
+    }
+    background-position: center center;
+    background-size: cover; }
+  .gridListOtherWork .yellow {
+    background-image: url("jugando-traje-desaturated.jpg");
+    &:hover{
+      background-image: url("jugando-traje.jpg");
+    }
+    background-position: center center;
+    background-size: cover; }
+  .gridListOtherWork .blue {
+    background-image: url("literature-desaturated.jpg");
+    &:hover{
+      background-image: url("literature.jpg");
+    }
+    background-position: center center;
+    background-size: cover; }
+  .gridListOtherWork .purple {
+    background-image: url('flower-desaturated.jpg');
+    &:hover{
+      background-image: url("flower.jpg");
+    }
+    background-position: center center;
+    background-size: cover;}
+  .gridListOtherWork .red {
+    background-image: url("dedos-screen-desaturated.jpg");
+    &:hover{
+      background-image: url("dedos-screen.jpg");
+    }
+    background-position: center center;
+    background-size: cover; }
+  .gridListOtherWork .pink {
+    background-image: url("ingenium-desaturated.jpg");
+    &:hover{
+      background-image: url("ingenium.jpg");
+    }
+    background-position: center center;
+    background-size: cover; }
+  .gridListOtherWork md-grid-tile {
+    transition: all 400ms ease-out 50ms; }
+
+    #contact-section{
+      background-image: url("dark-blue-bg.jpg");
+      background-position: left bottom;
+      background-size: cover;
+    }
+
+    md-input-container label, md-input-container .md-placeholder, .send-button, md-input-container.md-docs-white-theme .md-input {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    md-input-container.md-docs-white-theme:not(.md-input-invalid).md-input-has-value label{
+      color: rgba(255, 255, 255, 0.5)
+    }
+    input[type="email"]:focus{
+      background: transparent;
+    }
+  }

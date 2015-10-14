@@ -9,7 +9,14 @@
 
       .row
         .small-12.medium-10.large-5.columns.right.small-text-center.medium-text-right
-          %p I’m a 22 yo entrepreneur, designer and computer scientist who loves creating cool stuff.
+          %p
+            I’m a
+            %span{"ng-show"=>"isTodayMyBirthday"} 🎂
+            {{currentAge}} y.o.
+            %span{"ng-show"=>"isTodayMyBirthday"} 🎂
+            entrepreneur, designer and computer scientist who loves creating cool stuff.
+          %p{"ng-show"=>"isTodayMyBirthday"}
+            %i (Yay! Today is my birthday!)
 
       .row#social
         .small-12.medium-6.large-3.columns.right.text-right
@@ -21,12 +28,15 @@
               %a{href: "http://twitter.com/javi_rmrz"}
                 =image_tag("twitter-button.png")
             .small-4.columns
-              %a{href: "mailto:javi.rmrz@gmail.com"}
+              %a{"ng-click"=>"gotoElement('contact-section')"}
                 =image_tag("email-button.png")
 
   %footer.site-footer
     .row
-      .small-12.columns.right.small-text-center.medium-text-right
+      .small-12.medium-6.columns.text-right.show-for-medium-up
+        %a{"ng-click"=>"gotoElement('portfolio-section')"}
+          %i.fa.fa-caret-down.fa-3x
+      .small-12.medium-6.columns.small-text-center.medium-text-right
         %span
           Designed & crafted with
           %i.fa.fa-heart
@@ -35,3 +45,99 @@
             Fork me on
             %i.fa.fa-github
             Github.
+
+  %section.intro#portfolio-section
+    .content
+      .row
+        .small-12.columns
+          %h1 things I've done
+          -# %p.show-for-medium-up
+          -#   press&nbsp;
+          -#   %kbd
+          -#     ←
+          -#   &nbsp;and&nbsp;
+          -#   %kbd
+          -#     →
+          -#   &nbsp;to navigate with your keyboard
+      %md-content{:layout => "column"}
+        %md-virtual-repeat-container#horizontal-container{"md-orient-horizontal" => ""}
+          .repeated-item{:flex => "", "md-virtual-repeat" => "project in projects"}
+            %md-content.md-padding
+              %md-card
+                %a{"ng-href" => "{{project.url}}"}
+                  .md-card-image{"ng-style" => "{'background-image': 'url(' + projectBackgroundImage + ')'}", "ng-mouseenter"=>"projectBackgroundImage = project.onHoverImage", "ng-mouseleave"=>"projectBackgroundImage = project.coverImage", "ng-init"=>"projectBackgroundImage = project.coverImage"}
+                %md-card-content
+                  %h2.md-title
+                    %a{"ng-href" => "{{project.url}}"}
+                      {{project.title}}
+                    %span.md-position {{project.position}}
+                  %p {{project.description}}
+                .md-actions{:layout => "row", "layout-align" => "end center"}
+                  %md-button{"ng-href" => "{{project.twitter_url}}", "ng-show" => "project.twitter_url"}
+                    %i.fa.fa-twitter
+                    tw
+                  %md-button{"ng-href" => "{{project.facebook_url}}", "ng-show" => "project.facebook_url"}
+                    %i.fa.fa-facebook
+                    fb
+                  %md-button{"ng-href" => "{{project.url}}", "ng-show" => "project.url"} www
+
+  %section.intro#third-screen-section
+    .content
+      .row
+        .small-12.columns
+          %h1 other work
+      %div{"layout"=>"column", class:"inset"}
+        %md-grid-list.gridListOtherWork{"md-cols-gt-md" => "6", "md-cols-md" => "2", "md-cols-sm" => "1", "md-gutter" => "12px", "md-gutter-gt-sm" => "8px", "md-row-height" => "2:2", "md-row-height-gt-md" => "1:1"}
+          %md-grid-tile.green
+            %md-grid-tile-footer
+              %a{href:"https://www.youtube.com/watch?v=ANmlGx0rFEU"}
+                %h3 Video experiment
+          %md-grid-tile.blue{"md-colspan" => "2"}
+            %md-grid-tile-footer
+              %a{"ng-click"=>"showSimpleToast()"}
+                %h3 Short stories
+          %md-grid-tile.yellow
+            %md-grid-tile-footer
+              %h3 Website concept
+          %md-grid-tile.purple{"md-colspan" => "2"}
+            %md-grid-tile-footer
+              %a{href:"https://www.flickr.com/photos/36103598@N03/"}
+                %h3 Photography
+          %md-grid-tile.red{"md-colspan" => "2", "md-colspan-sm" => "1", "md-rowspan" => "1"}
+            %md-grid-tile-footer
+              %a{href:"http://aprendecondedos.es/colaboradores/"}
+                %h3 Android app
+          %md-grid-tile.pink{"md-colspan" => "2"}
+            %md-grid-tile-footer
+              %a{href:"http://ingeniumproject.com"}
+                %h3 Project concept
+          %md-grid-tile.gray{"md-colspan" => "2", "md-colspan-sm" => "1", "md-rowspan" => "1"}
+            %md-grid-tile-footer
+              %a{href:"https://www.youtube.com/watch?v=49dySqYSUzc&list=PLBsVBHshWzbZR14K9wWzVEku8bB-5s823"}
+                %h3 Videoblog
+
+  %section.intro#contact-section
+    .content
+      .row
+        .small-12.columns
+          %h1 say hi
+          .row
+            .small-12.columns{"ng-show" => "couldNotSaveContactForm && !isContactFormSent"}
+              %p Whoops! There was an error sending the message. Please try again.
+            .small-12.medium-6.columns{"ng-hide" => "isContactFormSent"}
+              %form{:name => "contactForm", "novalidate" => ""}
+                %md-content{"md-theme"=>"docs-white", "layout-padding" => ""}
+                  %md-input-container
+                    %label Name
+                    %input{"ng-model" => "contactForm.name"}
+                  %br
+                  %md-input-container
+                    %label Email
+                    %input{"ng-model" => "contactForm.email", :type => "email"}
+
+                  %md-input-container
+                    %label Message
+                    %textarea{"ng-model" => "contactForm.message", columns: 1, "md-maxlength"=>"500"}
+                %md-button.send-button{"ng-click" => "sendContactForm(contactForm)"} send message
+            .small-12.columns{"ng-show" => "isContactFormSent"}
+              %p Thank you for your message! I'll answer as soon as possible.
