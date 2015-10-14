@@ -3,7 +3,8 @@ angular.module('app')
   $scope.projects = [
     {
       title: "talentank.co",
-      image: "<%= asset_path('talentank-card.gif') %>",
+      coverImage: "<%= asset_path('talentank-cover.jpg') %>",
+      onHoverImage: "<%= asset_path('talentank-showcase-compressed.gif') %>",
       position: "Lead developer & designer",
       description: "Have you ever been in love? Did you know you can feel the same way about your job? It's all about culture fit!",
       url: "http://talentank.co",
@@ -12,7 +13,8 @@ angular.module('app')
     },
     {
       title: "unioncampus.com",
-      image: "<%= asset_path('orange-bg.jpg') %>",
+      coverImage: "<%= asset_path('union-cover.jpg') %>",
+      onHoverImage: "<%= asset_path('union-showcase-compressed.gif') %>",
       position: "Founder, president",
       description: "Non-profit, non-political organisation for promoting entrepreneurship and knowledge sharing among university students.",
       url: "http://unioncampus.com",
@@ -22,7 +24,8 @@ angular.module('app')
     // ,
     // {
     //   title: "TBA",
-    //   image: "<%= asset_path('orange-bg.jpg') %>",
+    //   coverImage: "<%= asset_path('-cover.jpg') %>",
+    //   onHoverImage: "<%= asset_path('talentank-card.gif') %>",
     //   position: "Founder, CEO",
     //   description: "You know you want to share your sadness when you feel down from time to time. It's all right. We just wanna laugh about it. Just a bit.",
     //   url: "TBA"

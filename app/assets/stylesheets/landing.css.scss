@@ -83,7 +83,7 @@
 		background-position: left bottom;
 		background-size: cover;
     min-height: 100%;
-    margin-bottom: -3.2rem;
+    margin-bottom: -4rem;
 	}
 
   #first-screen-section:after {
@@ -139,7 +139,10 @@
       	}
       	p {
           font-family: 'Open Sans';
-          font-size: 1.2rem;
+          @media screen and (min-width: 420px){
+            font-size: 1.2rem;
+          }
+          font-size: 0.7rem;
           font-weight: 300;
       		color: black;
       	}
@@ -177,14 +180,13 @@
 
   .md-card-image{
     height: 40vh;
-    background-image: url("orange-bg.jpg");
 		background-position: center center;
 		background-size: cover;
   }
 
   #horizontal-container {
       height: 80vh;
-      width: 100vw;
+      width: 100%;
   }
 
   .repeated-item {
@@ -199,7 +201,7 @@
   }
 
   #third-screen-section{
-    background-image: url("javi-bg-blue.jpg");
+    background-image: url("greenish-yellow-bg.jpg");
     background-position: left bottom;
     background-size: cover;
   }
@@ -210,34 +212,64 @@
       @media screen and (min-width: 420px){
         font-size: 1rem;
       }
-      font-size: 0.5rem;
+      font-size: 1rem;
       font-weight: 700;
       color: black;
     }
   }
-  .gridListdemoBasicUsage md-grid-list {
-    margin: 8px; }
-  .gridListdemoBasicUsage .gray {
-    background-image: url("orange-bg.jpg");
+  md-grid-list .gridListOtherWork {
+    // margin: 8px;
+    max-height: 80vh;
+  }
+  .gridListOtherWork .gray {
+    background-image: url("boston-adventure-desaturated.jpg");
+    &:hover{
+      background-image: url("boston-adventure.jpg");
+    }
     background-position: center center;
     background-size: cover;}
-  .gridListdemoBasicUsage .green {
-    background-image: url("somewhere.png");
+  .gridListOtherWork .green {
+    background-image: url("somewhere-desaturated.jpg");
+    &:hover{
+      background-image: url("somewhere.jpg");
+    }
     background-position: center center;
     background-size: cover; }
-  .gridListdemoBasicUsage .yellow {
-    background: #ffff8d; }
-  .gridListdemoBasicUsage .blue {
-    background-image: url("literature.jpg");
+  .gridListOtherWork .yellow {
+    background-image: url("jugando-traje-desaturated.jpg");
+    &:hover{
+      background-image: url("jugando-traje.jpg");
+    }
     background-position: center center;
     background-size: cover; }
-  .gridListdemoBasicUsage .purple {
-    background-image: url('http://c2.staticflickr.com/4/3725/9547332882_bf7ba3faae_c.jpg');
+  .gridListOtherWork .blue {
+    background-image: url("literature-desaturated.jpg");
+    &:hover{
+      background-image: url("literature.jpg");
+    }
+    background-position: center center;
+    background-size: cover; }
+  .gridListOtherWork .purple {
+    background-image: url('flower-desaturated.jpg');
+    &:hover{
+      background-image: url("flower.jpg");
+    }
     background-position: center center;
     background-size: cover;}
-  .gridListdemoBasicUsage .red {
-    background: #ff8a80; }
-  .gridListdemoBasicUsage md-grid-tile {
+  .gridListOtherWork .red {
+    background-image: url("dedos-screen-desaturated.jpg");
+    &:hover{
+      background-image: url("dedos-screen.jpg");
+    }
+    background-position: center center;
+    background-size: cover; }
+  .gridListOtherWork .pink {
+    background-image: url("ingenium-desaturated.jpg");
+    &:hover{
+      background-image: url("ingenium.jpg");
+    }
+    background-position: center center;
+    background-size: cover; }
+  .gridListOtherWork md-grid-tile {
     transition: all 400ms ease-out 50ms; }
-
-}
+  }
