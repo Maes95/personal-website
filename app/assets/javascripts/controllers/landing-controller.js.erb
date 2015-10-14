@@ -6,7 +6,8 @@ angular.module('app')
   }])
 
 
-.controller('LandingController', ['$scope', '$location', '$resource', '$mdToast', 'anchorSmoothScroll', 'ContactForm', function($scope, $location, $resource, $mdToast, anchorSmoothScroll, ContactForm){
+.controller('LandingController', ['$scope', '$location', '$resource', '$mdToast', 'anchorSmoothScroll', 'ContactForm',
+                          function($scope, $location, $resource, $mdToast, anchorSmoothScroll, ContactForm){
 
   $scope.gotoElement = function (eID){
       // set the location.hash to the id of
