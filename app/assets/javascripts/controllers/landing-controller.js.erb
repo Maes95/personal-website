@@ -18,6 +18,23 @@ angular.module('app')
 
     };
 
+  function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    if (m < 0 || (m === 0 && today.getDate() === birthDate.getDate())) {
+        $scope.isTodayMyBirthday = true;
+    }
+    return age;
+  };
+
+  var birthDate = "1993/05/29";
+  $scope.currentAge = getAge(birthDate);
+
   $scope.projects = [
     {
       title: "talentank.co",

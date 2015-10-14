@@ -9,7 +9,14 @@
 
       .row
         .small-12.medium-10.large-5.columns.right.small-text-center.medium-text-right
-          %p I’m a 22 y.o. entrepreneur, designer and computer scientist who loves creating cool stuff.
+          %p
+            I’m a
+            %span{"ng-show"=>"isTodayMyBirthday"} 🎂
+            {{currentAge}} y.o.
+            %span{"ng-show"=>"isTodayMyBirthday"} 🎂
+            entrepreneur, designer and computer scientist who loves creating cool stuff.
+          %p{"ng-show"=>"isTodayMyBirthday"}
+            %i (Yay! Today is my birthday!)
 
       .row#social
         .small-12.medium-6.large-3.columns.right.text-right
