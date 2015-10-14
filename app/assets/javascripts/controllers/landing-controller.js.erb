@@ -6,7 +6,7 @@ angular.module('app')
   })
 
 
-.controller('LandingController', ['$scope', '$location', '$mdToast', 'anchorSmoothScroll', 'ContactForm' ,function($scope, $location, $mdToast, anchorSmoothScroll, ContactForm){
+.controller('LandingController', ['$scope', '$location', '$resource', '$mdToast', 'anchorSmoothScroll', 'ContactForm' ,function($scope, $location, $resource, $mdToast, anchorSmoothScroll, ContactForm){
 
   $scope.gotoElement = function (eID){
       // set the location.hash to the id of
@@ -75,13 +75,18 @@ angular.module('app')
     );
   };
 
+  $scope.couldNotSaveContactForm = false;
   $scope.isContactFormSent = false;
 
-  $scope.sendContactForm = function(){
-    contact = new ContactForm($scope.contactForm);
-    contact.$save();
-    $scope.sentContactForm = true;
-    console.log($scope.sentContactForm);
+  $scope.sendContactForm = function(contactForm){
+    contact = new ContactForm(contactForm);
+    contact.$save(function(u, putResponseHeaders) {
+      $scope.isContactFormSent = true;
+    })
+    .catch(function(req) {
+      $scope.couldNotSaveContactForm = true;
+      console.log("error sending message");
+    });
   };
 
 }]);
