@@ -27,7 +27,7 @@ angular.module('app')
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
         age--;
     }
-    if (m < 0 || (m === 0 && today.getDate() === birthDate.getDate())) {
+    if (m <= 0 && today.getDate() === birthDate.getDate()) {
         $scope.isTodayMyBirthday = true;
     }
     return age;
@@ -59,12 +59,14 @@ angular.module('app')
     }
     // ,
     // {
-    //   title: "TBA",
-    //   coverImage: "<%= asset_path('-cover.jpg') %>",
-    //   onHoverImage: "<%= asset_path('talentank-card.gif') %>",
-    //   position: "Founder, CEO",
+    //   title: "DRAMAAA.com",
+    //   coverImage: "<%= asset_path('dramaaa-cover.jpg') %>",
+    //   onHoverImage: "<%= asset_path('dramaaa-showcase-compressed.png') %>",
+    //   position: "Founder",
     //   description: "You know you want to share your sadness when you feel down from time to time. It's all right. We just wanna laugh about it. Just a bit.",
-    //   url: "TBA"
+    //   url: "http://DRAMAAA.com",
+    //   twitter_url: "http://twitter.com/DRAMAAAcom",
+    //   facebook_url: "http://facebook.com/DRAMAAA"
     // }
   ];
 
