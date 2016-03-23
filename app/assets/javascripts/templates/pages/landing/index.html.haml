@@ -4,8 +4,8 @@
       .row#name
         .small-12.large-8.columns.right.small-text-center.medium-text-right#name
           %h1
-            &nbsp;
-            %br I'm Jay.
+            Javi
+            %br Ramírez
 
       .row
         .small-12.medium-10.large-5.columns.right.small-text-center.medium-text-right
@@ -30,6 +30,11 @@
             .small-4.columns
               %a{"ng-click"=>"gotoElement('contact-section')"}
                 =image_tag("email-button.png")
+          .row.hidden
+            .small-12.columns
+              %u
+                %br
+                %a{href: "http://blog.jayramez.com"} +blog
 
   %footer.site-footer
     .row
