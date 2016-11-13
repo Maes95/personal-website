@@ -7,6 +7,21 @@ angular.module('app')
         controller: 'LandingController'
       })
 
+      .when('/wome', {
+        templateUrl: 'pages/landing/womehome.html',
+        controller: 'LandingController'
+      })
+
+      .when('/results', {
+        templateUrl: 'pages/landing/womeresults.html',
+        controller: 'LandingController'
+      })
+      
+      .when('/detail', {
+        templateUrl: 'pages/landing/womedetail.html',
+        controller: 'LandingController'
+      })
+
       .otherwise({
         redirectTo: '/'
       });

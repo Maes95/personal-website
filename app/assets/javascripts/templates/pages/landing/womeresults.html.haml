@@ -1,0 +1,36 @@
+%nav.top-bar#navbar{:role => "navigation"}
+  .row
+    .small-12.columns
+      %ul.title-area
+        %li.name
+          = image_tag 'wome-logo.png', class:'navbar-logo'
+      %section.top-bar-section
+        %ul.right
+          %li
+
+.row
+  .small-12.columns
+    %h1.text-header{style: "color: black; margin: 0.5em 0;"}
+      Available working spaces
+      %b today
+      in
+      %b Madrid
+
+.row{style: "min-width: 100%"}
+  .small-8.columns
+    %ul.small-block-grid-2
+      -10.times do
+        %li
+          %img{src: "http://homelook.us/wp-content/uploads/2016/09/working-room-ideas-renovation-2-on-working-room-motiq-online-home-decorating-ideas.jpg"}
+          .row
+            .small-8.columns
+              %h2.listing-title 
+                Big room with wifi
+                &nbsp;· $12
+                %p.listing-copy Single room · 8 spots
+            .small-4.columns
+              %md-button.search-button{"onClick" => "window.location = 'results';"} book now
+
+
+  .small-4.columns
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "1024", :src => "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12150.583651543493!2d-3.7039952123657236!3d40.4166942968996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ses!4v1479052219083", :style => "border:0; width: 100%;"}
